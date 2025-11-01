@@ -8,7 +8,7 @@ import com.example.rickandmortyandroid.repositories.CharacterRepository
 object DependencyContainer {
     // Flag para alternar entre implementación real y mock
     // En producción debería venir de una configuración o BuildConfig.DEBUG
-    var useMock: Boolean = true
+    var useMock: Boolean = false
 
 
     // Lazy inicialización de la apiService según useMock

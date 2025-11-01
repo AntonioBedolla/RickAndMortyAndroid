@@ -1,5 +1,6 @@
 package com.example.rickandmortyandroid
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,12 +12,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.rickandmortyandroid.ui.characters.CharactersActivity
 import com.example.rickandmortyandroid.ui.theme.RickAndMortyAndroidTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // 👉 Aquí abrimos la pantalla de personajes
+        val intent = Intent(this, CharactersActivity::class.java)
+        startActivity(intent)
+
+        // Y si no quieres ver MainActivity, puedes cerrarla:
+        finish()
+      /*  enableEdgeToEdge()
         setContent {
             RickAndMortyAndroidTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -26,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
-        }
+        }*/
     }
 }
 
